@@ -22,7 +22,8 @@ export const getServerSideProps = async () => {
 const Home = ({products, bannerData}) => {
   return (
     <>
-      <HeroBanner heroBanner={bannerData[0]}/>
+      <HeroBanner heroBanner={bannerData && bannerData[0]}/>
+      
       <div className='products-heading'>
         <h2> Produtos Mais Vendidos </h2>
         <p> Fones de ouvidos de vários modelos </p>
@@ -33,7 +34,7 @@ const Home = ({products, bannerData}) => {
           <Product key={product._id} product={product}/>)}
       </div>
 
-      <FooterBanner/>
+      <FooterBanner footerBanner={bannerData && bannerData[0]}/>
     </>
   )
 }
